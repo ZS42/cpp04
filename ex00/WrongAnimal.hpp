@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 23:34:01 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 00:49:44 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/23 13:16:28 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-// const at end of function means that function will not change 
+// const at end of function means that function will not change
 // any members of class and before parameter
 // means that parameter will not be changed inside function
 class WrongAnimal
@@ -25,6 +25,7 @@ class WrongAnimal
         std::string type;
     public:
         WrongAnimal();
+		WrongAnimal(std::string type);
         WrongAnimal(const WrongAnimal &object);
         WrongAnimal &operator=(const WrongAnimal &object);
         // virtual so that compiler knows to looks for children classes destructors first
@@ -32,6 +33,6 @@ class WrongAnimal
         // not virtual so compiler uses base class function instead of most derived one
         void makeSound()const;
         std::string getType()const;
-     
+
 };
 #endif

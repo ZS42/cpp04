@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 23:33:48 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 00:55:26 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/23 13:23:46 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int main()
     delete i;
     delete j;
     delete meta;
-    
+
     std::cout << "Now testing WrongAnimal and WrongCat" << std::endl;
-    
+
     const WrongAnimal* beta = new WrongAnimal();
     const WrongAnimal* k = new WrongCat();
     std::cout << k->getType() << " " << std::endl;
@@ -39,5 +39,15 @@ int main()
     beta->makeSound();
     delete k;
     delete beta;
+
+	std::cout << std::endl;
+    std::cout << "test without allocation" << std::endl;
+    Animal meta1("Bat");
+    Dog dog1;
+    Cat cat1;
+    dog1.makeSound();
+    cat1.makeSound(); //will output the cat sound!
+    meta1.makeSound();
     return 0;
+
 }

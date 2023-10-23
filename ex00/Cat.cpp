@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 23:33:24 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 00:39:31 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/23 13:22:13 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ Cat::Cat(): Animal()
     type = "Cat";
     std::cout << "Cat default constructor called" << std::endl;
 }
+
+Cat::Cat(std::string type)
+{
+	this->type = type;
+    std::cout << "cat constructor that takes a parameter called " << type << std::endl;
+}
+
 
 Cat::Cat(const Cat &object): Animal()
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 23:33:11 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 00:20:01 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/23 13:17:45 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-// const at end of function means that function will not change 
+// const at end of function means that function will not change
 // any members of class and before parameter
 // means that parameter will not be changed inside function
 class Animal
@@ -25,12 +25,13 @@ class Animal
         std::string type;
     public:
         Animal();
+		Animal(std::string type);
         Animal(const Animal &object);
         Animal &operator=(const Animal &object);
         // virtual so that compiler knows to looks for children classes destructors first
         virtual ~Animal();
         virtual void makeSound()const;
         std::string getType()const;
-     
+
 };
 #endif

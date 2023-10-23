@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 23:33:38 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 00:41:23 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/23 13:21:37 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ Dog::Dog(): Animal()
     type = "Dog";
     std::cout << "Dog default constructor called" << std::endl;
 }
+
+Dog::Dog(std::string type)
+{
+	this->type = type;
+    std::cout << "Dog constructor that takes a parameter called " << type << std::endl;
+}
+
 
 Dog::Dog(const Dog &object):Animal()
 {
