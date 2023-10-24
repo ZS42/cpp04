@@ -18,6 +18,9 @@
 
 int main()
 {
+    // const Animal* a = new Animal();
+    // std::cout << "CAN INSTANTIATE ANIMAL" << std::endl;
+    // delete a;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     delete j;//should not create a leak
