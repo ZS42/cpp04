@@ -19,6 +19,10 @@
 
 int main()
 {
+	// compare with ex01
+	// const AAnimal* a = new Animal();
+	// std::cout << "CANT INSTANTIATE AANIMAL" << std::endl;
+	// delete a;
     const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
     delete j;//should not create a leak
