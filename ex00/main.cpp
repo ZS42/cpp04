@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 23:33:48 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 13:23:46 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/24 10:09:48 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
     delete j;
     delete meta;
 
-    std::cout << "Now testing WrongAnimal and WrongCat" << std::endl;
+    std::cout << "**NOW TESTING WRONG ANIMAL AND WRONG CAT**" << std::endl;
 
     const WrongAnimal* beta = new WrongAnimal();
     const WrongAnimal* k = new WrongCat();
@@ -41,7 +41,7 @@ int main()
     delete beta;
 
 	std::cout << std::endl;
-    std::cout << "test without allocation" << std::endl;
+    std::cout << "**TESTING WITHOUT ALLOCATION**" << std::endl;
     Animal meta1("Bat");
     Dog dog1;
     Cat cat1;
