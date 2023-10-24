@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:37:11 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 19:08:02 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/23 22:56:19 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ class Brain
 {
 	private:
 		std::string ideas[100];
+        int size;
     public:
         Brain();
-		// Brain(std::string ideas[100]);
+		Brain(std::string ideas[100]);
         Brain(const Brain &object);
         Brain &operator=(const Brain &object);
         ~Brain();

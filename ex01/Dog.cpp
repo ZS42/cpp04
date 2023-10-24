@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 01:08:15 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 21:19:49 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/24 08:51:54 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,32 @@ Dog::Dog(): Animal()
 {
     type = "Dog";
     std::cout << "Dog default constructor called" << std::endl;
+    brain = new Brain();
 }
 
 Dog::Dog(const Dog &object):Animal()
 {
-	type = "Dog";
     std::cout << "Dog copy constructor called" << std::endl;
-    *this = object;
+	this->type = object.type;
+    delete this->brain;
+    this->brain = new Brain();
+    *this->brain = *object.brain;
 }
 
 Dog &Dog::operator=(const Dog &object)
 {
-    if (this->type == object.type)
-	{
-    	std::cout << "Dog copy assignment operator called" << std::endl;
-		if (this != &object)
-		{
-			if (brain)
-				delete brain;
-			brain = new Brain(*object.brain);
-		}
-   		 return (*this);
-	}
-	else
-	{
-		std::cout << "types do not match!!" <<std::endl;
-		return (*this);
-	}
+    std::cout << "Dog copy assignment operator called " << std::endl;
+    delete this->brain;
+    this->brain = new Brain();
+    this->type = object.type;
+    this->brain = object.brain;
+    return (*this);
 }
 
 Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
+    delete this->brain;
 }
 
 void Dog::makeSound()const
@@ -61,16 +55,3 @@ Brain *Dog::getBrain()const
 {
     return (this->brain);
 }
-
-// std::string Dog::getIdeas( std::string ideas, int i) const
-// {
-// 	if (i > 0 && i < 99)
-// 		return this->ideas[i];
-// 	else
-// 		return NULL;
-// }
-
-// void Dog::setIdeas(std::string idea, int number)
-// {
-// 	this->brain->ideas[number] = idea;
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 01:08:36 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 20:01:43 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/23 23:21:50 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Dog: public Animal
 {
-	protected:
+	private:
 		Brain *brain;
     public:
         Dog();
@@ -28,9 +28,6 @@ class Dog: public Animal
 
         void makeSound()const;
 		Brain *getBrain()const;
-		 // std::string getIdeas(std::string ideas,int i) const;
-        // void setIdeas(std::string idea, int number);
-
 };
 
 #endif
