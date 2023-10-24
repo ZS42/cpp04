@@ -6,42 +6,42 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 01:20:54 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 01:22:28 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:39:21 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal()
+AAnimal::AAnimal()
 {
-    type = "Animal";
-    std::cout << "Animal default constructor called" << std::endl;
+    type = "AAnimal";
+    std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &object)
+AAnimal::AAnimal(const AAnimal &object)
 {
-    std::cout << "Animal copy constructor called" << std::endl;
+    std::cout << "AAnimal copy constructor called" << std::endl;
     *this = object;
 }
 
-Animal &Animal::operator=(const Animal &object)
+AAnimal &AAnimal::operator=(const AAnimal &object)
 {
-    std::cout << "Animal copy assignment operator called" << std::endl;
+    std::cout << "AAnimal copy assignment operator called" << std::endl;
     this->type = object.type;
     return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
     std::cout << "Animal destructor called" << std::endl;
 }
 
-void Animal::makeSound()const
+void AAnimal::makeSound()const
 {
-    std::cout << "Animal makes sound" << std::endl;
+    std::cout << "AAnimal makes sound" << std::endl;
 }
 
-std::string Animal::getType()const
+std::string AAnimal::getType()const
 {
     return (this->type);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 01:21:37 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 01:25:21 by zsyyida          ###   ########.fr       */
+/*   Created: 2023/10/23 01:08:36 by zsyyida           #+#    #+#             */
+/*   Updated: 2023/10/24 09:46:12 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 #define DOG_HPP
 
 #include <iostream>
+#include "Brain.hpp"
+#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-class Dog: public Animal
+class Dog: public AAnimal
 {
-    public:
-        Dog();
-        Dog(const Dog &object);
-        Dog &operator=(const Dog &object);
-        ~Dog();
-        
-        void makeSound()const;
-    
+	private:
+		Brain *brain;
+  public:
+      Dog();
+      Dog(const Dog &object);
+      Dog &operator=(const Dog &object);
+      ~Dog();
+      void makeSound()const;
+	    Brain *getBrain()const;
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 01:07:45 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 20:48:04 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:19:16 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,16 @@ Cat::Cat(): Animal()
 Cat::Cat(const Cat &object): Animal()
 {
     std::cout << "Cat copy constructor called" << std::endl;
-    *this = object;
+    *this->brain = *object.brain;
 }
 
 Cat &Cat::operator=(const Cat &object)
 {
     std::cout << "Cat copy assignment operator called" << std::endl;
-	this->type = object.type;
-	if (brain)
-		delete brain;
-	brain = new Brain;
-	brain = object.brain;
+	delete this->brain;
+    this->brain = new Brain();
+    this->type = object.type;
+    *this->brain = *object.brain;
     return (*this);
 }
 
@@ -47,15 +46,7 @@ void Cat::makeSound()const
     std::cout << "Cat makes meowing sound" << std::endl;
 }
 
-// std::string Cat::getIdeas(int i) const
-// {
-// 	if (i < 0 ||i >99)
-// 		return NULL;
-// 	else
-// 		return this->ideas[i];
-// }
-
-// void Cat::setIdeas(std::string idea, int number)
-// {
-// 	this->ideas[number] = idea;
-// }
+Brain *Cat::getBrain()const
+{
+    return (this->brain);
+}

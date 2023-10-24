@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: zsyyida <zsyyida@student42abudhabi.ae>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 01:21:06 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/23 01:23:02 by zsyyida          ###   ########.fr       */
+/*   Created: 2023/10/23 01:07:22 by zsyyida           #+#    #+#             */
+/*   Updated: 2023/10/23 20:46:21 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-// const at end of function means that function will not change 
+// const at end of function means that function will not change
 // any members of class and before parameter
 // means that parameter will not be changed inside function
 class Animal
@@ -31,6 +31,6 @@ class Animal
         virtual ~Animal();
         virtual void makeSound()const;
         std::string getType()const;
-     
+
 };
 #endif

@@ -6,20 +6,20 @@
 #    By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/22 23:03:37 by zsyyida           #+#    #+#              #
-#    Updated: 2023/10/22 23:29:59 by zsyyida          ###   ########.fr        #
+#    Updated: 2023/10/24 10:02:42 by zsyyida          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = aanimal
 
 
 CXX = c++
 RM	= rm -rf
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 #-fsanitize=address
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp AAnimal.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 

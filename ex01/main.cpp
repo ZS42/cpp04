@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 01:05:24 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/24 08:23:22 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/24 10:05:28 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
     delete j;//should not create a leak
     delete i;
 
-	std::cout << "** test with array of animals **" << std::endl;
+	std::cout << "** TEST WITH ARRAYS OF ANIMALS **" << std::endl;
 	int amountAnimals = 6;
 	Animal *animal[amountAnimals];
 	for (int i = 0; i < amountAnimals; i++ )
@@ -33,33 +33,25 @@ int main()
 		else
 			animal[i] = new Cat();
 	}
-	std::cout << "Arrays of Animals created: " << std::endl;
+	std::cout << "ARRAYS OF ANIMALS CREATED: " << std::endl;
 	for (int i = 0; i < amountAnimals; i++)
 			std::cout << "animal[" << i << "]: " << animal[i]->getType() << std::endl;
 	for (int i = 0; i < amountAnimals; i++ )
 			delete animal[i];
 
-	// testing for deep or shallow memory
-    // create a dog
-	const Dog *k = new Dog();
-	Brain *ofK = k->getBrain();
+	std::cout << "TESTING FOR DEEP AND SHALLOW MEMORY" << std::endl
+    // create a cat
+	const Cat *k = new Cat();
     for (int i = 0; i < 100; i++)
-        ofK->setIdeas("OLD IDEA", i);
-	    // k->getBrain()->setIdeas("OLD IDEA", i);
+	    k->getBrain()->setIdeas("OLD IDEA", i);
     std::cout << "K BRAIN IDEA 7 IS :   " << k->getBrain()->getIdeas(6) << std::endl;
     // assign the value to a copy
-    Dog l;
+    Cat l;
 	l = *k;
-    Brain *ofL = l.getBrain();
-    // std::cout << "L BRAIN IDEA 7 IS :   " << l.getBrain()->getIdeas(6) << std::endl;
-    std::cout << "L BRAIN IDEA 7 IS :   " << ofL->getIdeas(6) << std::endl;
-    // for (int i = 0; i < 100; i++)
-        ofK->setIdeas("NEW IDEA", 6);
-	    // k->getBrain()->setIdeas("NEW IDEA", 6);
-    // std::cout << "K BRAIN IDEA 7 IS NOW:   " << k->getBrain()->getIdeas(6) << std::endl;
-    std::cout << "K BRAIN IDEA 7 IS NOW:   " << ofK->getIdeas(6) << std::endl;
-    // std::cout << "L BRAIN IDEA 7 IS STILL:   " << l.getBrain()->getIdeas(6) << std::endl;
-    std::cout << "L BRAIN IDEA 7 IS STILL:   " << ofL->getIdeas(6) << std::endl;
-
+    std::cout << "L BRAIN IDEA 7 IS :   " << l.getBrain()->getIdeas(6) << std::endl;
+	k->getBrain()->setIdeas("NEW IDEA", 6);
+    std::cout << "K BRAIN IDEA 7 IS NOW:   " << k->getBrain()->getIdeas(6) << std::endl;
+    std::cout << "L BRAIN IDEA 7 IS STILL:   " << l.getBrain()->getIdeas(6) << std::endl;
+	delete k;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: zsyyida <zsyyida@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 01:08:15 by zsyyida           #+#    #+#             */
-/*   Updated: 2023/10/24 08:51:54 by zsyyida          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:18:55 by zsyyida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ Dog::Dog(): Animal()
 Dog::Dog(const Dog &object):Animal()
 {
     std::cout << "Dog copy constructor called" << std::endl;
-	this->type = object.type;
-    delete this->brain;
-    this->brain = new Brain();
     *this->brain = *object.brain;
 }
 
@@ -36,7 +33,7 @@ Dog &Dog::operator=(const Dog &object)
     delete this->brain;
     this->brain = new Brain();
     this->type = object.type;
-    this->brain = object.brain;
+    *this->brain = *object.brain;
     return (*this);
 }
 
